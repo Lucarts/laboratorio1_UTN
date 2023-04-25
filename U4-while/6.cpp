@@ -33,9 +33,9 @@ int main () {
       counter = 0;
     }
   }
-  
-  cout << "Cantidad de ternas negativas: " << qTernas;
 
+  cout << endl << endl;
+  cout << "Cantidad de ternas negativas: " << qTernas;
   cout << endl << endl;
 
   return 0;
