@@ -1,0 +1,23 @@
+# Compiled files
+*.o
+*.out
+*.exe
+
+# Build artifacts
+build/
+*.vsix
+*.vsix.*
+*.vsixmanifest
+*.dll
+*.lib
+
+# VSCode specific files
+.vscode/
+*.vscode/settings.json
+*.vscode/tasks.json
+*.vscode/launch.json
+*.vscode/extensions.json
+
+# Prettier extension specific files
+.prettierrc
+.prettierignore
