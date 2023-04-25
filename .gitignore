@@ -21,3 +21,4 @@ build/
 # Prettier extension specific files
 .prettierrc
 .prettierignore
+.vscode
