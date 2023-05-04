@@ -21,49 +21,50 @@ B) Por cada destino turístico, el total recaudado.
 using namespace std;
 
 int main (){
-  int codigoDestino, mes, qPasajesVendidos;
+  const int MESES = 12;
+
+  int codDestino, mes, qPasajesVendidos;
+  int i;
   float totalRecaudado;
 
-  // variable para utilizar corte de control
-  int destinoActual;
+  // Creo variable acumuladora para calculo de punto A)
+  int qTotalPasajesVendidos = 0;
+  // Creo variable acumuladora para calculo punto B)
+  float totalRecaudadoxDestino = 0;
 
-  // variable para calcular A)
-  int acuPasajesVendidos = 0;
+  cout << "CODIGO DE DESTINO TURISTICO: ";
+  cin >> codDestino;
 
-  cout << "CODIGO DE DESTINO: ";
-  cin >> codigoDestino;
+  while (codDestino != 0){
+    totalRecaudadoxDestino = 0;
 
-  while (codigoDestino != 0) {
-    // variable para calcular B)
-    float acuTotalRecaudadoXDestino = 0;
-
-    destinoActual = codigoDestino;
-    
-    while (codigoDestino == destinoActual) {
-
+    for (i = 1; i <= 12; i++) {
+      // Pido los datos de cada registro
+      
       cout << "MES: ";
       cin >> mes;
-
-      cout << "TOTAL PASAJES VENDIDOS: ";
+      
+      cout << "CANTIDAD DE PASAJES VENDIDOS: ";
       cin >> qPasajesVendidos;
       
       cout << "TOTAL RECAUDADO: ";
       cin >> totalRecaudado;
 
-      acuPasajesVendidos += qPasajesVendidos;
-      acuTotalRecaudadoXDestino += totalRecaudado;
+      // acumulo en las variables
+      qTotalPasajesVendidos += qPasajesVendidos;
+      totalRecaudadoxDestino += totalRecaudado;
 
-      cout << "CODIGO DESTINO: ";
-      cin >> codigoDestino;
     }
 
-    // B) Total recaudado por cada destino 
-    cout << "TOTAL RECAUDADO $ " << acuTotalRecaudadoXDestino;
-    cout << endl << endl;
+    cout << "\tTOTAL RECAUDADO DESTINO: $" << totalRecaudadoxDestino << endl << endl;
+
+    cout << "CODIGO DE DESTINO TURISTICO: ";
+    cin >> codDestino;
 
   }
-  // A) Acumulador de pasajes vendidos 
-  cout << "CANTIDAD TOTAL DE PASAJES VENDIDOS: " << acuPasajesVendidos;
+
+  // A) 
+  cout << "\tCantidad total de pasajes vendidos: " << qTotalPasajesVendidos << endl;
 
   cout << endl << endl;
   return 0;
