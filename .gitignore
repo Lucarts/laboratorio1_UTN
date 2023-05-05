@@ -4,6 +4,7 @@
 *.exe
 *.so
 
+tempCodeRunnerFile
 
 # Build artifacts
 build/
