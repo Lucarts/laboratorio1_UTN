@@ -87,9 +87,10 @@ int main () {
       }
     }
 
-    if (descalificaciones >= 1) {
+    if (!puedeGanar) {
       counterDescalificaciones++;
     }
+
     // D)
     cout << "\n\nD) % de calificaciones y descalificaciones" << endl;
     cout << "\t% CALIFICACIONES : " << float(calificaciones / CANTIDAD_VUELTAS * 100) << " % " << endl;
@@ -107,7 +108,7 @@ int main () {
 
   // B)
   cout << "\nB)" << endl;
-  cout << "\tCANTIDAD DESCALIFICADOS MAS DE UNA VEZ: " << counterDescalificaciones << endl;
+  cout << "\tCANTIDAD DESCALIFICADOS AL MENOS UNA VEZ: " << counterDescalificaciones << endl;
 
   // C)
   cout << "\nC)" << endl;
