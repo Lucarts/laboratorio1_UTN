@@ -34,7 +34,7 @@ int main () {
   const int CANTIDAD_VUELTAS = 4;
 
   int acumuladorTiempoTotal;
-  bool puedeGanar = 1;
+  bool puedeGanar;
   int ganador, tiempoMinimo = 0;
   float descalificaciones, calificaciones;
   int counterDescalificaciones = 0;
@@ -62,14 +62,14 @@ int main () {
       cout << "\tDESCALIFICADO? (1 - Sí; 0 - No): ";
       cin >> descalificado;
 
-      if (descalificado == 1) {
+      if (descalificado) {
         descalificaciones++;
         puedeGanar = 0;
       } else {
         calificaciones++;
       }
 
-      if (i == CANTIDAD_VUELTAS - 1 && descalificado ==0) {
+      if (i == CANTIDAD_VUELTAS - 1 && !descalificado) {
         counterCalificacionesUltimaVuelta++;
       }
 
@@ -87,7 +87,7 @@ int main () {
       }
     }
 
-    if (descalificaciones > 1) {
+    if (descalificaciones >= 1) {
       counterDescalificaciones++;
     }
     // D)
