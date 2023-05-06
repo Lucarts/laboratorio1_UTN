@@ -69,7 +69,7 @@ int main () {
         calificaciones++;
       }
 
-      if (i == 3 && descalificado ==0) {
+      if (i == CANTIDAD_VUELTAS - 1 && descalificado ==0) {
         counterCalificacionesUltimaVuelta++;
       }
 
@@ -92,16 +92,16 @@ int main () {
     }
     // D)
     cout << "\n\nD) % de calificaciones y descalificaciones" << endl;
-    cout << "\t% CALIFICACIONES : " << float(calificaciones / 4 * 100) << " % " << endl;
-    cout << "\t% DESCALIFICACIONES : " << float(descalificaciones / 4 * 100 )<< " % " << endl << endl;
+    cout << "\t% CALIFICACIONES : " << float(calificaciones / CANTIDAD_VUELTAS * 100) << " % " << endl;
+    cout << "\t% DESCALIFICACIONES : " << float(descalificaciones / CANTIDAD_VUELTAS * 100 )<< " % " << endl << endl;
 
     cout << "CODIGO PARTICIPANTE: ";
     cin >> codigoParticipante;
   }
   
 
-  // A)
-  cout << "\nA) GANADOR" << endl;
+  // A) 
+  cout << "\n\nA) GANADOR" << endl;
   cout << "\tEL GANADOR DE LA COMPETENCIA ES: " << ganador << endl;
   cout << "\tEL TIEMPO DEL GANADOR FUE: " << tiempoMinimo << endl;
 
