@@ -33,11 +33,16 @@ int main () {
   bool descalificado;
   const int CANTIDAD_VUELTAS = 4;
 
-  int acumuladorTiempoTotal;
-  bool puedeGanar;
+  // A
   int ganador, tiempoMinimo = 0;
+  int acumuladorTiempoTotal;
+  
+  bool puedeGanar;
+  // D
   float descalificaciones, calificaciones;
+  // B
   int counterDescalificaciones = 0;
+  // C
   int counterCalificacionesUltimaVuelta = 0;
 
   cout << "CODIGO PARTICIPANTE: ";
@@ -76,14 +81,9 @@ int main () {
     }
 
     if (puedeGanar) {
-      if (tiempoMinimo == 0) {
+      if (tiempoMinimo == 0 || acumuladorTiempoTotal <= tiempoMinimo) {
         tiempoMinimo = acumuladorTiempoTotal;
         ganador = codigoParticipante;
-      } else {
-        if (acumuladorTiempoTotal <= tiempoMinimo) {
-          ganador = codigoParticipante;
-          tiempoMinimo = acumuladorTiempoTotal;
-        }
       }
     }
 
@@ -96,6 +96,8 @@ int main () {
     cout << "\t% CALIFICACIONES : " << float(calificaciones / CANTIDAD_VUELTAS * 100) << " % " << endl;
     cout << "\t% DESCALIFICACIONES : " << float(descalificaciones / CANTIDAD_VUELTAS * 100 )<< " % " << endl << endl;
 
+
+    // Pido el nuevo registro
     cout << "CODIGO PARTICIPANTE: ";
     cin >> codigoParticipante;
   }
