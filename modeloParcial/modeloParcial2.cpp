@@ -23,6 +23,7 @@ Aclaraciones
 */
 
 #include <iostream>
+#include <cctype>
 using namespace std;
 
 int main () {
@@ -35,16 +36,20 @@ int main () {
   // Variables A)
   float acumuladorImporte_puntoA, promedioImporte_puntoA;
   int counterImporte_puntoA;
-  int sucursalAnterior;
-
-  // B && D) 
+  bool vendioTalle40;
+  
+  // B) 
   int counterSucursales_puntoB = 0;
   bool vendioPantuflas, vendioZapatos, vendioOjotas, vendioZapatillas;
   bool sucursal50 = 0;
+
   // C)
   float importeTotalZ = 0, importeTotalX = 0, importeTotalP = 0, importeTotalO = 0;
   float mayor_puntoB = -1;
   string calzado_puntoB;
+
+  // D)
+
 
   for (int i = 0; i < NUMERO_SUCURSALES; i++){
     
@@ -52,6 +57,8 @@ int main () {
     vendioZapatos = 0;
     vendioZapatillas = 0;
     vendioOjotas = 0;
+
+    vendioTalle40 = 0;
 
     acumuladorImporte_puntoA = 0;    
     counterImporte_puntoA = 0;
@@ -81,6 +88,7 @@ int main () {
       cin >> importe;
 
       if (talle == 40) {
+        vendioTalle40 = 1;
         acumuladorImporte_puntoA += importe;
         counterImporte_puntoA ++;
       }
@@ -137,8 +145,11 @@ int main () {
 
     // A)
     cout << "\n\nPUNTO A)";
-    promedioImporte_puntoA = acumuladorImporte_puntoA/float(counterImporte_puntoA);
-    cout << "\n\tEL PROMEDIO DE IMPORTE DE LOS CALZADOS TALLE 40 FUE DE: $ " << promedioImporte_puntoA << endl;
+    if (vendioTalle40) {
+      promedioImporte_puntoA = acumuladorImporte_puntoA/float(counterImporte_puntoA);
+      cout << "\n\tEL PROMEDIO DE IMPORTE DE LOS CALZADOS TALLE 40 FUE DE: $ " << promedioImporte_puntoA << endl;
+    }
+    
 
     // B)
     if (!vendioPantuflas && vendioZapatos) {
