@@ -29,7 +29,6 @@ ACLARACIONES: No habrá más de un turno con la mayor facturación total.
 using namespace std;
 
 int main () {
-  // !Cambiar esto a 10 al final
   const int TURNOS = 10;
   int numeroDeTurno;
   int legajoEmpleado;
@@ -61,10 +60,8 @@ int main () {
   // Variables e)
   int counter_puntoE = 0;
 
-
   for (int i = 0; i < TURNOS; i++) {
 
-    // Aca reinicializo las variables por sublote
     accumulatorFacturacionXturno = 0;
     accumulatorLitrosDespachados = 0;
     counterVentasPorTurno = 0;
@@ -85,7 +82,6 @@ int main () {
      
       cout << "INGRESE EL IMPORTE TOTAL DE LA VENTA: ";
       cin >> importeVenta;
-
 
       accumulatorTotalLitrosDespachados += litrosDespachados;
 
@@ -129,16 +125,11 @@ int main () {
           break;
         }
       };
-    
-
-      
 
       if (litrosDespachados <= 15) {
         counter_puntoE++;
       }
       
-
-      // punto de corte
       cout << "INGRESE EL LEGAJO DEL EMPLEADO: ";
       cin >> legajoEmpleado;
     }
@@ -148,24 +139,12 @@ int main () {
       numeroDeTurnoQueMasFacturo = numeroDeTurno;
     }
     
-    // Aca muestro los resultados procesados por sublote
     cout << "\n\nPunto C)" << endl;
     promedioLitrosPorVenta = accumulatorLitrosDespachados/float(counterVentasPorTurno);
     cout << "\t-Promedio de litros despachados por venta en el turno " << numeroDeTurno << " : " << promedioLitrosPorVenta << endl << endl;
-
-
-
   }
   
-  // Aca muestro los totales generales
   cout << "\nPunto A) PORCENTAJES DISCRIMINADOS POR TIPO DE COMBUSTIBLE" << endl;
-  
-
-  cout << endl << endl << "------LITROS 1 " << accumulatorLitros1 << endl << endl;
-  cout << endl << endl << "------LITROS 1 " << accumulatorLitros2 << endl << endl;
-  cout << endl << endl << "------LITROS 1 " << accumulatorLitros3 << endl << endl;
-  cout << endl << endl << "------TOTAL LITROS  " << accumulatorTotalLitrosDespachados<< endl << endl;
-
   cout << "\t- Combustible 1: " << accumulatorLitros1 / accumulatorTotalLitrosDespachados * 100<< "%" << endl;
   cout << "\t- Combustible 2: " << accumulatorLitros2 / accumulatorTotalLitrosDespachados * 100 << "%" << endl;
   cout << "\t- Combustible 3: " << accumulatorLitros3 / accumulatorTotalLitrosDespachados * 100 << "%" << endl;
@@ -186,10 +165,8 @@ int main () {
   cout << "\t- El turno que mas facturo fue el turno: " << numeroDeTurnoQueMasFacturo << endl;
   cout << "\t- El total facturado en ese turno fue de $ " << maximoTotalFacturadoXTurnos << endl;
 
-
   cout << "\nPunto E)" << endl;
   cout << "\t-CANTIDAD DE VENTAS EN LAS QUE NO SE DESPACHARON MAS DE 15 LTS: " <<  counter_puntoE << endl;
-
 
   cout << endl << endl;
   return 0;
