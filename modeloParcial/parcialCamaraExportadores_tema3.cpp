@@ -34,9 +34,8 @@ Aclaraciones
 using namespace std;
 
 int main () {
-  // !CAMBIAR ESTO A 10 y a 7!!!!!
-  const int CANTIDAD_INDUSTRIAS = 5;
-  const int CANTIDAD_EXPORTACIONES = 6;
+  const int CANTIDAD_INDUSTRIAS = 10;
+  const int CANTIDAD_EXPORTACIONES = 7;
 
   int codigoIndustria;
   int codigoExportacion;
@@ -70,13 +69,9 @@ int main () {
     cout << "\nINGRESE EL CODIGO DE INDUSTRIA: ";
     cin >> codigoIndustria;
 
-    // Aca reinicializo las variables
     exportoProducto35 = 0;
-
     toneladasRemaining = 0;
-    
     cantidadTotalContenedores = 0;
-
     importePorTon = 0;
 
     for (int j = 0; j < CANTIDAD_EXPORTACIONES; j++) {
@@ -131,26 +126,18 @@ int main () {
         codigoExportacionMenorTon = codigoExportacion;
         continenteDestinoMenorTon = continenteDestino;
       }
-
-      // Aca corta el for
     }
 
     if (exportoProducto35 == 0) {
       counterIndustrias_puntoA++;
     }
     
-    
-    // Aca muestro los totales por sublote
     cout << "\n\nPUNTO C) CANTIDAD TOTAL DE CONTENEDORES NECESARIOS: " << endl;
     cout << "\t- La cantidad de contenedores industria COD " << codigoIndustria << " es de : " << cantidadTotalContenedores  << endl;
-
   }
   
-
-  // Aca muestro los totales generales
   cout << "\nPUNTO A) CANTIDAD DE INDUSTRIAS QUE NO EXPORTARON EL PRODUCTO COD 35: " << endl;
   cout << "\t- Cantidad de industrias: " << counterIndustrias_puntoA << endl;
-  
 
   cout << "\nPUNTO B) CONTINENTE QUE MAS TONELADAS RECIBIO: " << endl;
   if (accumulatorToneladasAmerica > accumulatorToneladasEuropa && accumulatorToneladasAmerica > accumulatorToneladasAsia) {
@@ -166,7 +153,6 @@ int main () {
   
   cout << "\nPUNTO D) EXPORTACION QUE REGISTRO EL MENOR IMPORTE POR TON: " << endl;
   cout << "\t- Codigo de exportacion: " << codigoExportacionMenorTon << endl;
-
   cout << "\t- Importe por tonelada: " << importeMenorPorTon << endl;
   cout << "\t- Continente de destino (1 - América, 2 - Europa, 3 - Asia): " << continenteDestinoMenorTon << endl;
 
