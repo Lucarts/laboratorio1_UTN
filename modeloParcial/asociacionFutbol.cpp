@@ -148,6 +148,7 @@ int main () {
     }
 
     // Aca muestro los totales por sublotes
+
     cout << "\n\nPUNTO A) CAMPEON DEL TORNEO NRO: " << numeroTorneo << endl;
     cout << "\t-Campeon equipo numero: " << equipoCampeon << endl;
     cout << "\t-Puntos obtenidos por el campeon: " << puntosObtenidosCampeon << endl;
@@ -172,6 +173,7 @@ int main () {
   cout << "\t-Numero de equipo que menos partidos empato: " << equipoQueMenosEmpato<< endl;
   cout << "\t-Cantidad de partidos que empato: " << cantidadMinDePartidosEmpatados << endl;
   cout << "\t-Torneo en el que sucedio: " << numeroDeTorneoConElMenorEmpate << endl;
+
 
   cout << endl << endl;
   return 0;
