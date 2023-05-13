@@ -104,6 +104,7 @@ int main () {
     if (accumulatorInversionTotalizada > 100) {
       counterHortalizas_puntoC++ ;
     }
+
     
     cout << "\n\nPUNTO A) Hortaliza COD: " << codigoHortaliza << endl;
     cout << "\t-Cantidad de localidades con cosecha menor a la prevista: " << counterLocalidades_puntoA << endl;
