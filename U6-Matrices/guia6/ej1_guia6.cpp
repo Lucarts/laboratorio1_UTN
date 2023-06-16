@@ -7,7 +7,7 @@ using namespace std;
 int LONGITUD_MATRIZ = 10;
 
 int main() {
-  int matrizNumeros[10]{}, counter = 0;
+  int matrizNumeros[10]{};
 
   // Pido al user que ingrese los 10 numeros
   for (int i = 0; i < LONGITUD_MATRIZ; i++) {
