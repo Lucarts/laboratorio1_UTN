@@ -25,3 +25,5 @@ build/
 .prettierrc
 .prettierignore
 .vscode
+
+.clang-format

@@ -24,6 +24,9 @@ Los números de artistas que hayan tocado más de 15 temas en el recital (tenien
 en cuenta todos los días en los que hayan participado). Los géneros que no hay
 participado en absoluto del recital.
 
+
+!GETLINE - Ver
+
 */
 
 #include <iostream>
@@ -34,7 +37,7 @@ int main() {
   int i, nroEstacion;
 
   for (int i = 0; i < 10; i++) {
-    cout << "Ingrese la estaciond del anio favorita: ";
+    cout << "Ingrese la estaciond del anio favorita: 1 Verano, 2 tonio, 3 invierno, 4 primavera ";
     cin >> nroEstacion;
 
     votosEstaciones[nroEstacion - 1]++;
@@ -45,6 +48,7 @@ int main() {
          << " votos" << endl;
   }
 
-  cout << endl << endl;
+  cout << endl;
+  cout << endl;
   return 0;
 }
