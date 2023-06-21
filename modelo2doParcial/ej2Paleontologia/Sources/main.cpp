@@ -68,6 +68,7 @@ int main() {
   // B
   cout << "\n\n Punto B - LEGAJO DEL PALEONTOLOGO QUE ENCONTRO MAS FOSILES:" << endl;
   cout << "\t - El legago es: " << legajoConMasFosiles;
+
   // C
   cout << "\n\n Punto C - COSTO PROMEDIO EXP CBA" << endl;
   cout << "\t -El costo promedio fue de:" << costoPromedioExpedicionesCordoba;

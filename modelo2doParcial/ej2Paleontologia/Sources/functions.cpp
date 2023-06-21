@@ -1,10 +1,10 @@
 #include <iostream>
 using namespace std;
-
 #include "../Headers/functions.h"
 
 void cargarDatos(int matriz[500][6]) {
-  int legajo, diasDuracion, codigoProvincia, qFosilesAnimales, qFosilesVegetales, costoExpedicion;
+  int legajo, diasDuracion, codigoProvincia, qFosilesAnimales, qFosilesVegetales;
+  float costoExpedicion;
 
   cout << "\nIngrese el Legajo del Paleontologo Lider: ";
   cin >> legajo;
