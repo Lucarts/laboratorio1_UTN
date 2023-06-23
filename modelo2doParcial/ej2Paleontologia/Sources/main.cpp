@@ -41,6 +41,7 @@ using namespace std;
 int main() {
 
   // A
+  int nombreDeProvincias_puntoA[6][2]{0};
 
   // B
   int legajoPaleontologo_puntoB[500][2]{0};
@@ -48,7 +49,9 @@ int main() {
   //C
   float costoPromedio_puntoC[2]{0};
 
-  cargarDatos(legajoPaleontologo_puntoB, costoPromedio_puntoC);
+  cargarDatos(nombreDeProvincias_puntoA, legajoPaleontologo_puntoB, costoPromedio_puntoC);
+
+  puntoA(nombreDeProvincias_puntoA);
 
   puntoB(legajoPaleontologo_puntoB);
 

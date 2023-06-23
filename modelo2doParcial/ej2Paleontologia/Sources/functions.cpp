@@ -2,14 +2,12 @@
 using namespace std;
 #include "../Headers/functions.h"
 
-void cargarDatos(int legajoPaleontologo_puntoB[500][2], float costoPromedio_puntoC[2]) {
+void cargarDatos(int nombreDeProvincias_puntoA[6][2], int legajoPaleontologo_puntoB[500][2], float costoPromedio_puntoC[2]) {
   int legajo, diasDuracion, codigoProvincia, qFosilesAnimales, qFosilesVegetales;
   float costoExpedicion;
 
   cout << "Ingrese el Legajo del Paleontologo Lider: ";
   cin >> legajo;
-
-  //B
 
   // C
   float accumulator_puntoC = 0;
@@ -21,9 +19,14 @@ void cargarDatos(int legajoPaleontologo_puntoB[500][2], float costoPromedio_punt
 
     cout << "Ingrese el Codigo de la Provincia: ";
     cin >> codigoProvincia;
+    nombreDeProvincias_puntoA[codigoProvincia - 1][0] = 1;
 
     cout << "Ingrese la Cantidad de fosiles Animales Encontrados: ";
     cin >> qFosilesAnimales;
+    if (qFosilesAnimales > 0) {
+      nombreDeProvincias_puntoA[codigoProvincia - 1][1] = 1;
+    }
+
     legajoPaleontologo_puntoB[legajo - 1000][0] += qFosilesAnimales;
 
     cout << "Ingrese la Cantidad de fosiles Vegetales Encontrados: ";
@@ -45,7 +48,15 @@ void cargarDatos(int legajoPaleontologo_puntoB[500][2], float costoPromedio_punt
   costoPromedio_puntoC[1] = counter_puntoC;
 }
 
-void puntoA() {
+void puntoA(int nombreDeProvincias_puntoA[6][2]) {
+  string provincias[6] = {"Rio Negro", "Chubut", "Santa Cruz", "Cordoba", "Tierra del Fuego", "Buenos Aires"};
+
+  cout << "\nPUNTO A) NOMBRE DE PROVINCIAS EN LAS QUE NO SE ENCONTRARON ANIMALES " << endl;
+  for (int i = 0; i < 6; i++) {
+    if (nombreDeProvincias_puntoA[i][0] == 1 && nombreDeProvincias_puntoA[i][1] == 0) {
+      cout << "\t -" << provincias[i] << endl;
+    }
+  }
 }
 
 void puntoB(int legajoPaleontologo_puntoB[500][2]) {
