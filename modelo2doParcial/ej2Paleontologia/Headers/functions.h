@@ -3,10 +3,10 @@
 
 // DECLARACION DE FUNCITONS (solamente las declaraciones)
 
-void cargarDatos(float costoPromedio_puntoC[2]);
+void cargarDatos(int legajoPaleontologo_puntoB[500][2], float costoPromedio_puntoC[2]);
 
 void puntoA();
-void puntoB();
+void puntoB(int legajoPaleontologo_puntoB[500][2]);
 
 void puntoC(float costoPromedio_puntoC[2]);
 

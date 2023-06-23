@@ -40,10 +40,17 @@ using namespace std;
 
 int main() {
 
-  //C
-  float costoPromedio_puntoC[2];
+  // A
 
-  cargarDatos(costoPromedio_puntoC);
+  // B
+  int legajoPaleontologo_puntoB[500][2]{0};
+
+  //C
+  float costoPromedio_puntoC[2]{0};
+
+  cargarDatos(legajoPaleontologo_puntoB, costoPromedio_puntoC);
+
+  puntoB(legajoPaleontologo_puntoB);
 
   puntoC(costoPromedio_puntoC);
 
