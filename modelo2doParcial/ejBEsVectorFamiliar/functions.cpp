@@ -13,15 +13,14 @@ Definición de número primo: En matemáticas, un número primo es un número na
 #include <iostream>
 using namespace std;
 
-// function definition
-
+bool esPrimo(int numero);
 bool EsVectorFamiliar(int array[], int arrayLength);
 
 int main() {
-  int longitudArray = 3;
-  int arrayPrimos[longitudArray] = {7, 3, 5};
 
-  bool esArrayPrimo = EsVectorFamiliar(arrayPrimos, longitudArray);
+  int arrayPrimos[3] = {4, 3, 5};
+
+  bool esArrayPrimo = EsVectorFamiliar(arrayPrimos, 3);
 
   cout << "\n\t - El vector es primo : " << esArrayPrimo;
 
@@ -30,20 +29,29 @@ int main() {
 }
 
 bool EsVectorFamiliar(int array[], int arrayLength) {
-  int i, j, counterDivisores;
-  bool esFamiliar = false;
+  int i, j, contadorPrimos = 0;
 
   for (i = 0; i < arrayLength; i++) {
-    counterDivisores = 0;
-
-    for (j = 1; j <= array[i]; j++) {
-      if (array[i] % j == 0) {
-        counterDivisores++;
-      }
+    if (esPrimo(array[i])) {
+      contadorPrimos++;
     }
-
-    esFamiliar = (counterDivisores == 2);
   }
 
-  return (esFamiliar);
+  return (contadorPrimos == arrayLength);
+}
+
+bool esPrimo(int numero) {
+  int i, contador = 0;
+
+  if (numero <= 1) {
+    return false;
+  }
+
+  for (i = 1; i <= numero; i++) {
+    if (numero % i == 0) {
+      contador++;
+    }
+  }
+
+  return (contador == 2);
 }
