@@ -18,7 +18,7 @@ bool EsVectorFamiliar(int array[], int arrayLength);
 
 int main() {
 
-  int arrayPrimos[3] = {4, 3, 5};
+  int arrayPrimos[3] = {2, 3, 2};
 
   bool esArrayPrimo = EsVectorFamiliar(arrayPrimos, 3);
 

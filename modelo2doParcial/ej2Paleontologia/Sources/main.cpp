@@ -39,42 +39,13 @@ using namespace std;
 #include "../Headers/functions.h"
 
 int main() {
-  int matriz[500][6] = {};
 
-  // Variables punto A
-  bool provinciasConFosilesAnimales[6]{};
-  string provincias[6] = {"Rio Negro", "Chubut", "Santa Cruz", "Cordoba", "Tierra del Fuego", "Buenos Aires"};
+  //C
+  float costoPromedio_puntoC[2];
 
-  // Variables punto B
-  int legajoConMasFosiles;
+  cargarDatos(costoPromedio_puntoC);
 
-  // Variables Punto C
-  float costoPromedioExpedicionesCordoba, accumulatorCba, counterCba;
-
-  // Functions
-  cargarDatos(matriz);
-  puntoA(matriz, provinciasConFosilesAnimales);
-  legajoConMasFosiles = puntoB(matriz);
-  costoPromedioExpedicionesCordoba = puntoC(matriz);
-
-  // A
-  cout << "\n\n Provincias en las que no se encontraron fosiles animales: ";
-  for (int i = 0; i < 6; i++) {
-    if (provinciasConFosilesAnimales[i] == false) {
-      cout << "\n\t - " << provincias[i];
-    }
-  }
-
-  // B
-  cout << "\n\n Punto B - LEGAJO DEL PALEONTOLOGO QUE ENCONTRO MAS FOSILES:" << endl;
-  cout << "\t - El legago es: " << legajoConMasFosiles;
-
-  // C
-  cout << "\n\n Punto C - COSTO PROMEDIO EXP CBA" << endl;
-  cout << "\t -El costo promedio fue de:" << costoPromedioExpedicionesCordoba;
-
-  cout << endl
-       << endl;
+  puntoC(costoPromedio_puntoC);
 
   return 0;
 }
