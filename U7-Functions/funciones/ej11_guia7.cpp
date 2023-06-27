@@ -18,19 +18,21 @@ int main() {
   string hemisferios[2] = {"Sur", "Norte"};
 
   dia = 20;
-  mes = 12;
-  hemisferio = 1;
+  mes = 6;
+  hemisferio = 0;
 
   mostrarNombreEstacion(dia, mes, hemisferio, estacion);
 
   cout << "\n NOMBRE DE LA ESTACION:" << endl;
-  cout << "\t-Hemisferio: " << hemisferios[hemisferio];
-  cout << "\t- FECHA: " << dia << "/" << mes << "/" << endl;
+  cout << "\t- FECHA: " << dia << "/" << mes << endl;
+  cout << "\t- Hemisferio: " << hemisferios[hemisferio] << endl;
   cout << "\t- " << estacion << endl;
 
   return 0;
 }
 
+//* Alt 1, sin matrices
+/*
 void mostrarNombreEstacion(int dia, int mes, int hemisferio, string &estacion) {
   string estaciones[4] = {"Verano", "Otonio", "Invierno", "Primavera"};
 
@@ -66,5 +68,28 @@ void mostrarNombreEstacion(int dia, int mes, int hemisferio, string &estacion) {
     } else {
       estacion = estaciones[1];
     }
+  }
+};
+*/
+
+//* Alt 2, con matrices
+void mostrarNombreEstacion(int dia, int mes, int hemisferio, string &estacion) {
+  string estaciones[2][4] = {{"Verano", "Otoño", "Invierno", "Primavera"},
+                             {"Invierno", "Primavera", "Verano", "Otoño"}};
+
+  if ((mes == 12 && dia >= 21) || mes == 1 || mes == 2 || (mes == 3 && dia < 21)) {
+    hemisferio == 0 ? estacion = estaciones[0][0] : estacion = estaciones[1][0];
+    return;
+  }
+  if ((mes == 3 && dia >= 21) || mes == 4 || mes == 5 || (mes == 6 && dia < 21)) {
+    hemisferio == 0 ? estacion = estaciones[0][1] : estacion = estaciones[1][1];
+    return;
+  }
+  if ((mes == 6 && dia >= 21) || mes == 7 || mes == 8 || (mes == 9 && dia < 21)) {
+    hemisferio == 0 ? estacion = estaciones[0][2] : estacion = estaciones[1][2];
+    return;
+  } else {
+    hemisferio == 0 ? estacion = estaciones[0][3] : estacion = estaciones[1][3];
+    return;
   }
 };
