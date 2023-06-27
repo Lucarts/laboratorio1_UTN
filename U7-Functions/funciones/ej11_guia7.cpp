@@ -78,18 +78,18 @@ void mostrarNombreEstacion(int dia, int mes, int hemisferio, string &estacion) {
                              {"Invierno", "Primavera", "Verano", "Otoño"}};
 
   if ((mes == 12 && dia >= 21) || mes == 1 || mes == 2 || (mes == 3 && dia < 21)) {
-    hemisferio == 0 ? estacion = estaciones[0][0] : estacion = estaciones[1][0];
+    estacion = hemisferio == 0 ? estaciones[0][0] : estaciones[1][0];
     return;
   }
   if ((mes == 3 && dia >= 21) || mes == 4 || mes == 5 || (mes == 6 && dia < 21)) {
-    hemisferio == 0 ? estacion = estaciones[0][1] : estacion = estaciones[1][1];
+    estacion = hemisferio == 0 ? estaciones[0][1] : estaciones[1][1];
     return;
   }
   if ((mes == 6 && dia >= 21) || mes == 7 || mes == 8 || (mes == 9 && dia < 21)) {
-    hemisferio == 0 ? estacion = estaciones[0][2] : estacion = estaciones[1][2];
+    estacion = hemisferio == 0 ? estaciones[0][2] : estaciones[1][2];
     return;
   } else {
-    hemisferio == 0 ? estacion = estaciones[0][3] : estacion = estaciones[1][3];
+    estacion = hemisferio == 0 ? estaciones[0][3] : estaciones[1][3];
     return;
   }
 };
